@@ -1,0 +1,7 @@
+//Connecting gsheets with charts
+https://developers.google.com/chart/image/docs/making_charts
+//
+
+//Create charts on the fly and wrap them with IMAGE)to display in sheets. 
+For example : 
+https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|World
