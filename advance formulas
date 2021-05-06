@@ -24,10 +24,10 @@ Arguments of SEQUENCE function are 1) the number of rows, 2) the number of colum
 
 
 Array formula with sumifs formulas
-This is useful if you want the latest data to populate without manually dragging down a formula. Sumifs formula can’t expand with arrays, In other words, it returns a single cell output.
+This is useful if you want the latest data to populate without manually dragging down a formula. Unfortunately, the function Sumifs can’t expand with arrays, In other words, it returns a single cell output.
 To code a multiple criteria Sumif formula in Google Sheets, you should use the function ArrayFormula together with Sumif. Another requirement is to use "&" to joins multiple criteria and its corresponding columns.
 
-Simple Array formula (that will expand automatically when new data is added) for Multiple Criteria in Google Sheets : 
+This simple array formula will automatically do the summation when a new data is added : 
 =ArrayFormula(sumif(A2:A&B2:B,E3:E4&F3:F4,C2:C))
-The complete formula that takes into account a new data input in each month : 
+The complete formula that takes a new data input in each month, and otherwise returns a blank cell : 
 =Arrayformula(if(isblank(B17:B),,(sumif(Process!$A:$A&Process!$B:$B&Process!$T:$T,B17:B&$C$16&$A$1,Process!$G:$G))))
