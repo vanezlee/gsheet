@@ -10,9 +10,8 @@ https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|Worl
 
 ----
 
-//Using a combination of sumifs, Indirect and Vlookup to summarise multiple metrics that meet any criteria by duration. 
-// by coding the formula this way, the formula could be quickly replicated across the entire table. 
-// Vlookup helps to automate the Indirect formula further by referencing the column location a separate table, removing the tedious need to code raw data location from each metric column. 
+//Using a combination of sumifs, Indirect and Vlookup to summarise multiple metrics that meets a set of drop down criteria across timespan.
+// by coding the formula this way, it could be quickly replicated across the entire table. Vlookup and Indirect formula helps to automate by referencing the column location from a separate table, removing the tedious need to code the location of the raw data of each metric. 
 
 =sumifs(INDIRECT(vlookup(Column name that matches the raw data table, specify the table where the arguement could be found in the leftmost column, to return the data on the 3rd column of the table, to match the search exactly)), meets criteria 1 of sumifs formula, and meets certeria 2 of sumifs formula. 
 =sumifs(INDIRECT(vlookup(C$7,List!$C$2:$E$18,3,false)),Raw!$A:$A,$B8,Raw!$F:$F,$C$4)
@@ -20,14 +19,15 @@ https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|Worl
 ----
 
 // Use this Array formula to automate sequential dates in the sheet. 
+
 =ArrayFormula(DATE(2021,1,SEQUENCE(60))) // List 60 Days from 1st Jan 2021
 =ArrayFormula(DATE(2021,SEQUENCE(12),1)) // List 12 Months from 1st Jan, broken down in months
 =ArrayFormula(DATE(2021,SEQUENCE(12,1,1,3),1)) // List 12 entries starting from Jan 2021 (1st month) with an incremental step size of 3 months in between.   
 =SEQUENCE(5,1,TODAY(),1) // List 5 days starting from today 
 
-Sequence function allows you to define if the data  will display in sequencial columns or row format.
+SEQUENCE function allows you to define if the data  will display in sequencial column or row.
 Arguments of SEQUENCE function are 1) the number of rows, 2) the number of columns, 3) a start value, and 4) a step size. 
-Note that SEQUENCE does not work with volatile functions (RAND, RANDBETWEEN) and strips of its function of generating random number. The incremental step size only allows for positive and negative integers, and not decimals. 
+Note that SEQUENCE does not work with volatile functions (RAND, RANDBETWEEN) as it strips off its functionality of generating random number. The incremental step size only allows for positive and negative integers, not decimals. 
 ----
 
 Array formula with sumif formulas
