@@ -13,9 +13,11 @@ https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|Worl
 =sumifs(INDIRECT(vlookup(Column name that matches the raw data table, specify the table where the arguement could be found in the leftmost column, to return the data on the 3rd column of the table, to match the search exactly)), meets criteria 1 of sumifs formula, and meets certeria 2 of sumifs formula. 
 =sumifs(INDIRECT(vlookup(C$7,List!$C$2:$E$18,3,false)),Raw!$A:$A,$B8,Raw!$F:$F,$C$4)
 
-// Use this Array formula to automate sequential dating: 
+// Use this Array formula to automate sequential dates in the sheet. 
 =ArrayFormula(DATE(2021,1,SEQUENCE(60))) // List 60 Days from 1st Jan 2021
 =ArrayFormula(DATE(2021,SEQUENCE(12),1)) // List 12 Months from 1st Jan, broken down in months
+=ArrayFormula(DATE(2021,SEQUENCE(12,1,1,3),1)) // List 12 entries starting from Jan 2021 (1st month) with an incremental step size of 3 months in between.   
 =SEQUENCE(5,1,TODAY(),1) // List 5 days starting from today 
 
+Sequence function allows you to 
 Arguments of SEQUENCE function are 1) the number of rows, 2) the number of columns, 3) a start value, and 4) a step size.
