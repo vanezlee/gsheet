@@ -19,7 +19,7 @@ function formatforanalysis() {
 
 ----- 
 
-//Absolute custom format shortens and make huge numbers more readable (usually in the millions and more). Formatting changes how the figure is displayed on the front end, but does not change the actual figure. Hence making any further computation on the figures accurate.
+//Absolute custom format shortens and make huge numbers more readable (usually in the millions and more). Formatting changes how the data is displayed on the front end. Hence, making any computation still remains accurate.
 [<999950]0.0,"K";[<999950000]0.0,,"M";0.0,,,"B"
 
 //Use the following format to insert currency into a custom format (replace $US)
