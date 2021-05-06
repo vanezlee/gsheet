@@ -21,3 +21,13 @@ https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|Worl
 
 Sequence function allows you to define if the data  will display in sequencial columns or row format.
 Arguments of SEQUENCE function are 1) the number of rows, 2) the number of columns, 3) a start value, and 4) a step size. 
+
+
+Array formula with sumifs formulas
+This is useful if you want the latest data to populate without manually dragging down a formula. Sumifs formula can’t expand with arrays, In other words, it returns a single cell output.
+To code a multiple criteria Sumif formula in Google Sheets, you should use the function ArrayFormula together with Sumif. Another requirement is to use "&" to joins multiple criteria and its corresponding columns.
+
+Simple Array formula (that will expand automatically when new data is added) for Multiple Criteria in Google Sheets : 
+=ArrayFormula(sumif(A2:A&B2:B,E3:E4&F3:F4,C2:C))
+The complete formula that takes into account a new data input in each month : 
+=Arrayformula(if(isblank(B17:B),,(sumif(Process!$A:$A&Process!$B:$B&Process!$T:$T,B17:B&$C$16&$A$1,Process!$G:$G))))
