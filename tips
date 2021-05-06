@@ -6,16 +6,6 @@ https://developers.google.com/chart/image/docs/making_charts
 For example : 
 https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|World
 
-
-//Absolute custom format shortens and make huge numbers more readable (usually in the millions and more). Formatting changes how the figure is displayed on the front end, but does not change the actual figure. Hence making any further computation on the figures accurate.
-[<999950]0.0,"K";[<999950000]0.0,,"M";0.0,,,"B"
-
-//Use the following format to insert currency into a custom format (replace $US)
-[$US$][<999950]0.0,"K";[$US$][<999950000]0.0,,"M";[$US$]0.0,,,"B"
-
-//If the currency is in the negative form, use the following custom format instead (replace $US): 
-[$US$][<999950]-0.0,"K";[$US$][<999950000]-0.0,,"M";[$US$]-0.0,,,"B"
-
 //Using a combination of sumifs, Indirect and Vlookup to summarise multiple total values by months that meet any criteria. 
 // by coding the formula this way, the formula could be quickly replicated across the entire table. 
 // Vlookup helps to automate the Indirect formula further by referencing the column location to be summed on a separate table, removing the tedious need to code each location within the final table. 
@@ -28,4 +18,4 @@ https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|Worl
 =ArrayFormula(DATE(2021,SEQUENCE(12),1)) // List 12 Months from 1st Jan, broken down in months
 =SEQUENCE(5,1,TODAY(),1) // List 5 days starting from today 
 
-SEQUENCE function : Arguments are 1) the number of rows, 2) the number of columns, 3) a start value, and 4) a step size.
+Arguments of SEQUENCE function are 1) the number of rows, 2) the number of columns, 3) a start value, and 4) a step size.
