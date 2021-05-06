@@ -1,20 +1,12 @@
-TABLE FORMATTING FOR ANALYSIS to maximize legibility.
+Set this macro to automate header row formatting for analysis to maximize legibility. So you're ready to go with the next steps of your analysis.
 
-1) Center align headings
-So the spacing across the header row is consistent.
-
-2) Make headings bold
-So they stand out from regular data in your columns.
-
-3) Wrap text in header row
-To ensure all the column headings are immediately readable.
-
+1) Center align headings 
+2) Make headings bold 
+3) Wrap text in header row 
 4) Freeze the top row
-
 5) Add filters
-So you're ready to go with the next steps of your analysis.
  
-To format first column for analysis, use the following app script to automate STEPS 1 - 5.
+Use the following app script to automate STEPS 1 - 5.
 
 //To activate, Clear all existing format with ctrl\ and highlight the 1st row.
 
