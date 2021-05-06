@@ -2,16 +2,22 @@
 https://developers.google.com/chart/image/docs/making_charts
 //
 
+----
+
 //Create charts on the fly and wrap them with function =IMAGE()to display in sheet. 
 For example : 
 https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|World
 
+----
+
 //Using a combination of sumifs, Indirect and Vlookup to summarise multiple metrics that meet any criteria by duration. 
 // by coding the formula this way, the formula could be quickly replicated across the entire table. 
-// Vlookup helps to automate the Indirect formula further by referencing the column location a separate table, removing the tedious need to code raw data location of each metric column. 
+// Vlookup helps to automate the Indirect formula further by referencing the column location a separate table, removing the tedious need to code raw data location from each metric column. 
 
 =sumifs(INDIRECT(vlookup(Column name that matches the raw data table, specify the table where the arguement could be found in the leftmost column, to return the data on the 3rd column of the table, to match the search exactly)), meets criteria 1 of sumifs formula, and meets certeria 2 of sumifs formula. 
 =sumifs(INDIRECT(vlookup(C$7,List!$C$2:$E$18,3,false)),Raw!$A:$A,$B8,Raw!$F:$F,$C$4)
+
+----
 
 // Use this Array formula to automate sequential dates in the sheet. 
 =ArrayFormula(DATE(2021,1,SEQUENCE(60))) // List 60 Days from 1st Jan 2021
@@ -21,11 +27,12 @@ https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|Worl
 
 Sequence function allows you to define if the data  will display in sequencial columns or row format.
 Arguments of SEQUENCE function are 1) the number of rows, 2) the number of columns, 3) a start value, and 4) a step size. 
+Note that SEQUENCE does not work with volatile functions (RAND, RANDBETWEEN) and strips of its function of generating random number. The incremental step size only allows for positive and negative integers, and not decimals. 
+----
 
-
-Array formula with sumifs formulas
+Array formula with sumif formulas
 This is useful if you want the latest data to populate without manually dragging down a formula. Unfortunately, the function Sumifs can’t expand with arrays, In other words, it returns a single cell output.
-To code a multiple criteria Sumif formula in Google Sheets, you should use the function ArrayFormula together with Sumif. Another requirement is to use "&" to joins multiple criteria and its corresponding columns.
+To code this, you should use the function ArrayFormula together with Sumif (single). Another requirement is to use "&" to joins multiple criteria and its corresponding columns.
 
 This simple array formula will automatically do the summation when a new data is added : 
 =ArrayFormula(sumif(A2:A&B2:B,E3:E4&F3:F4,C2:C))
