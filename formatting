@@ -1,13 +1,11 @@
-Set this macro to automate header row formatting for analysis to maximize legibility. So you're ready to go with the next steps of your analysis.
-
+//Set this macro to automate header row formatting for analysis to maximize legibility. So you're ready to go with the next steps of your analysis.
 1) Center align headings 
 2) Make headings bold 
 3) Wrap text in header row 
 4) Freeze the top row
 5) Add filters
  
-Use the following app script to automate STEPS 1 - 5.
-
+//Use the following app script to automate STEPS 1 - 5.
 //To activate, Clear all existing format with ctrl\ and highlight the 1st row.
 
 function formatforanalysis() {
@@ -19,6 +17,7 @@ function formatforanalysis() {
   spreadsheet.getActiveRange().createFilter();
 };
 
+----- 
 
 //Absolute custom format shortens and make huge numbers more readable (usually in the millions and more). Formatting changes how the figure is displayed on the front end, but does not change the actual figure. Hence making any further computation on the figures accurate.
 [<999950]0.0,"K";[<999950000]0.0,,"M";0.0,,,"B"
@@ -28,3 +27,5 @@ function formatforanalysis() {
 
 //If the currency is in the negative form, use the following custom format instead (replace $US): 
 [$US$][<999950]-0.0,"K";[$US$][<999950000]-0.0,,"M";[$US$]-0.0,,,"B"
+
+-----
