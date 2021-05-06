@@ -12,13 +12,13 @@ https://chart.googleapis.com/chart?cht=p3&chs=250x100&chd=t:60,40&chl=Hello|Worl
 
 3) Use this absolute custom format to shorten and make huge numbers more readable (usually in the millions and more). 
 Formatting changes how the figure is displayed on the front end, but does not change the actual figure. Hence making any further computation on the figures accurate.
-[<999950]0.0,"K";[<999950000]0.0,,"M";0.0,,,"B"
+[<999950]0.0,"K";[<999950000]0.0,,"M";0.0,,,"B"]
 
 3.1) Use the following format to insert currency into a custom format (replace $US)
-[$US$][<999950]0.0,"K";[$US$][<999950000]0.0,,"M";[$US$]0.0,,,"B"
+[$US$][<999950]0.0,"K";[$US$][<999950000]0.0,,"M";[$US$]0.0,,,"B"]
 
 3.2) If the currency is in the negative form, use the following custom format instead (replace $US): 
-[$US$][<999950]-0.0,"K";[$US$][<999950000]-0.0,,"M";[$US$]-0.0,,,"B"
+[$US$][<999950]-0.0,"K";[$US$][<999950000]-0.0,,"M";[$US$]-0.0,,,"B"]
 
 4) Use a combination of sumifs, Indirect and Vlookup to summarise multiple total values by months that meet any criteria. 
 // by coding the formula this way, the formula could be quickly replicated across the entire table. 
